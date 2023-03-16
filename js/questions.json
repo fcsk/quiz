@@ -1,0 +1,56 @@
+[
+      {
+        "question":"Expand the html shortcut.",
+        "A": "Hyper Text Media Language",
+        "B": "HyperText Markup Language",
+        "C": "Hyper Tool Media Language",
+        "D": "Hyper Translation Media Language",
+        "correct": "B"
+      },  
+  
+      {
+        "question":"How to get a class element in JS",
+        "A": "document.getElementsByClassName('class_name')",
+        "B": "document.getElementById('id_name')",
+        "C": "document.querySellector('selector_name')",
+        "D": "document.getElementsByTagName(`tag_name`);",
+        "correct": "A"
+      }, 
+      
+      {
+        "question":"How to declarte a constant variable?",
+        "A": "let nameVariable;",
+        "B": "constant nameVariable;",
+        "C": "const nameVariable();",
+        "D": "const nameVariable;",
+        "correct": "D"
+      },
+      {
+        "question":"Which loop/loop function will you use to add number every existing numbers in array?",
+        "A": "array.forEach",
+        "B": "if",
+        "C": "do while",
+        "D": "while",
+        "correct": "A"
+      },  
+  
+      {
+        "question":"How to set direction on the y axis with flexbox css?",
+        "A": "display: flex;",
+        "B": "flex-wrap: nowrap",
+        "C": "flex-direction: column",
+        "D": "flex-flow: column wrap;",
+        "correct": "C"
+      }, 
+      
+      {
+        "question":"How to set background color to div element when cursor is on it in css file?",
+        "A": "div:hover {background: #@124532}",
+        "B": "div:active {background: blue}",
+        "C": "div:active {color: blue}",
+        "D": "div:hover {background: red}",
+        "correct": "D"
+      }
+  
+      
+  ]
