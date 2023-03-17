@@ -5,14 +5,14 @@ const answerA = document.getElementById("A");
 const answerB = document.getElementById("B");
 const answerC = document.getElementById("C");
 const answerD = document.getElementById("D");
-const answers = document.getElementsByClassName("answers");
+const answers = document.querySelectorAll(".answers span");
 
 const max = data.length;
 let numberOfElement = numberofQuestion(max);
 
 questionPlace.textContent = data[numberOfElement].question;
-
-checkAnswerValue(getAnswers(numberOfElement, data), data);
+getAnswers(numberOfElement, data);
+//checkAnswerValue(answers, data);
 
 function numberofQuestion(number) {
   let questionNumber = Math.random() * (0 - number) + number;
@@ -21,7 +21,6 @@ function numberofQuestion(number) {
 }
 
 function getAnswers(numberOfElement, data) {
-  let answerArray = [];
   answerA.textContent = data[numberOfElement].A;
   answerB.textContent = data[numberOfElement].B;
   answerC.textContent = data[numberOfElement].C;
@@ -31,15 +30,10 @@ function getAnswers(numberOfElement, data) {
   answerB.value = "B";
   answerC.value = "C";
   answerD.value = "D";
-
-  answerArray = [answerA, answerB, answerC, answerD];
-  return answerArray;
 }
 
-function checkAnswerValue(answerArray, data) {
-  for (let i = 0; i < answerArray.length; i++) {
-    if (answerArray[i].value == data[numberOfElement].correct) {
-      console.log(answerArray[i].value);
-    }
-  }
-}
+answers.forEach((element) => {
+  element.addEventListener("click", (event) => {
+    console.log(event.target);
+  });
+});
