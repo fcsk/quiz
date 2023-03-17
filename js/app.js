@@ -12,11 +12,11 @@ let numberOfElement = numberofQuestion(max);
 
 questionPlace.textContent = data[numberOfElement].question;
 getAnswers(numberOfElement, data);
-//checkAnswerValue(answers, data);
 
 function numberofQuestion(number) {
   let questionNumber = Math.random() * (0 - number) + number;
   questionNumber = questionNumber.toFixed(0);
+
   return questionNumber;
 }
 
@@ -34,6 +34,16 @@ function getAnswers(numberOfElement, data) {
 
 answers.forEach((element) => {
   element.addEventListener("click", (event) => {
-    console.log(event.target);
+    if (event.target.value == data[numberOfElement].correct) {
+      console.log("odpowiedź prawidłowa");
+      event.target.classList.add("postivie");
+    } else {
+      console.log("odpowiedź nieprawidłowa");
+      event.target.classList.add("negative");
+    }
+    /// after button click next question, need to remove classes after check answer ///
+    numberOfElement = numberofQuestion(max);
+    questionPlace.textContent = data[numberOfElement].question;
+    getAnswers(numberOfElement, data);
   });
 });

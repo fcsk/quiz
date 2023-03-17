@@ -47,3 +47,11 @@ body {
     cursor: pointer;
     border: .1rem solid green;
 }
+
+.postivie {
+    color:green;
+}
+
+.negative {
+    color:red;
+}
