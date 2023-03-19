@@ -18,6 +18,10 @@ function numberofQuestion(number) {
   let questionNumber = Math.random() * (0 - number) + number;
   questionNumber = questionNumber.toFixed(0);
 
+  if (questionNumber >= data.length) {
+    questionNumber = data.length - 1;
+  }
+
   return questionNumber;
 }
 
