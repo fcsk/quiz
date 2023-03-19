@@ -50,6 +50,38 @@
         "C": "div:active {color: blue}",
         "D": "div:hover {background: red}",
         "correct": "D"
+      },
+      {
+        "question":"How to get all elements of DOM element class=`triple`",
+        "A": "document.querySelector(`.next-question`);",
+        "B": "document.getSelectorAll(`.triple`);",
+        "C": "document.querySelector(`.triple`);",
+        "D": "document.querySelectorAll(`.triple`);",
+        "correct": "D"
+      },
+      {
+        "question":"Which selector is paragraph selector?`",
+        "A": "<p>",
+        "B": "<a>",
+        "C": "<span>",
+        "D": "<h1>",
+        "correct": "A"
+      },
+      {
+        "question":"how to declare a constant variable",
+        "A": "let variable",
+        "B": "variable constant",
+        "C": "const variable",
+        "D": "var variable;",
+        "correct": "C"
+      },
+      {
+        "question":"how to declare a constant variable",
+        "A": "let variable",
+        "B": "variable constant",
+        "C": "const variable",
+        "D": "var variable;",
+        "correct": "C"
       }
   
       
