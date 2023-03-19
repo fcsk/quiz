@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: rgb(36, 34, 34);
+    background-image: linear-gradient(to right bottom, #1f67d3, #008fe5, #00aabc, #00bc73, #92c227);
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -18,7 +18,6 @@ body {
 .container {
     width: 66vw;
     height: 100vh;
-    border: 10px solid blue;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -28,8 +27,9 @@ body {
 .question {
     margin: 0 auto;
     width: 80%;
-    border: 3px solid orange;
     height: 50%;
+    margin-bottom: .2rem;
+    background-color:rgba(0, 0, 0, 0.5)
 }
 
 .answers {
@@ -40,7 +40,11 @@ body {
     justify-content: center;
     width: 80%;
 
+}
 
+.answer {
+    margin-bottom: .1rem;
+    background-color:rgba(0, 0, 0, 0.5)
 }
 
 .answers div {
