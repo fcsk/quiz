@@ -6,6 +6,7 @@ const answerB = document.getElementById("B");
 const answerC = document.getElementById("C");
 const answerD = document.getElementById("D");
 const answers = document.querySelectorAll(".answers span");
+const buttonNext = document.querySelector(".next-question");
 
 const max = data.length;
 let numberOfElement = numberofQuestion(max);
@@ -41,9 +42,16 @@ answers.forEach((element) => {
       console.log("odpowiedź nieprawidłowa");
       event.target.classList.add("negative");
     }
-    /// after button click next question, need to remove classes after check answer ///
-    numberOfElement = numberofQuestion(max);
-    questionPlace.textContent = data[numberOfElement].question;
-    getAnswers(numberOfElement, data);
   });
+});
+
+buttonNext?.addEventListener("click", function () {
+  answers.forEach((answer) => {
+    answer.classList.remove("postivie");
+    answer.classList.remove("negative");
+  });
+
+  numberOfElement = numberofQuestion(max);
+  questionPlace.textContent = data[numberOfElement].question;
+  getAnswers(numberOfElement, data);
 });
