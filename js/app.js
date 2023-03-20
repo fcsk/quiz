@@ -4,8 +4,12 @@ const answerA = document.getElementById("A");
 const answerB = document.getElementById("B");
 const answerC = document.getElementById("C");
 const answerD = document.getElementById("D");
+const answer = document.querySelectorAll(".answer");
 const answers = document.querySelectorAll(".answers div");
 const buttonNext = document.querySelector(".next-question");
+const score = document.querySelector(".score");
+const questionNumber = document.querySelector(".question-number");
+let scoreCounter = 0;
 
 async function loadJSON(url) {
   const res = await fetch(url);
@@ -14,6 +18,7 @@ async function loadJSON(url) {
 
 loadJSON("https://api.npoint.io/ed80ed7e8d638faa9bb6").then((dataJSON) => {
   const max = dataJSON.length;
+  questionNumber.textContent = max;
   let numberOfElement = numberofQuestion(max);
 
   questionPlace.textContent = dataJSON[numberOfElement].question;
@@ -46,8 +51,26 @@ loadJSON("https://api.npoint.io/ed80ed7e8d638faa9bb6").then((dataJSON) => {
     element.addEventListener("click", (event) => {
       if (event.target.value == dataJSON[numberOfElement].correct) {
         event.target.classList.add("postivie");
+        if (!element.classList.contains("negative")) {
+          scoreCounter++;
+          score.textContent = scoreCounter;
+          setTimeout(function () {
+            numberOfElement = numberofQuestion(max);
+            questionPlace.textContent = dataJSON[numberOfElement].question;
+            getAnswers(numberOfElement, dataJSON);
+            event.target.classList.remove("postivie");
+          }, 800);
+        }
       } else {
-        event.target.classList.add("negative");
+        element.classList.add("negative");
+        setTimeout(function () {
+          numberOfElement = numberofQuestion(max);
+          questionPlace.textContent = dataJSON[numberOfElement].question;
+          getAnswers(numberOfElement, dataJSON);
+          answer.forEach((element) => {
+            element.classList.remove("negative");
+          });
+        }, 700);
       }
     });
   });

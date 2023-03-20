@@ -101,6 +101,10 @@ body {
     text-align: center;
 }
 
+.score-Div {
+    font-size: 1rem;
+}
+
 
 #questionPlace {
     font-size: 2rem;
