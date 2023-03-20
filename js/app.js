@@ -5,7 +5,7 @@ const answerA = document.getElementById("A");
 const answerB = document.getElementById("B");
 const answerC = document.getElementById("C");
 const answerD = document.getElementById("D");
-const answers = document.querySelectorAll(".answers span");
+const answers = document.querySelectorAll(".answers div");
 const buttonNext = document.querySelector(".next-question");
 
 const max = data.length;
