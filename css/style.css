@@ -21,8 +21,8 @@ body {
 
 .container {
     margin: 0 auto;
-    width: 50vw;
-    height: 80vh;
+    width: 60%;
+    height: 70%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -38,6 +38,8 @@ body {
     min-height: 10%;
     margin-bottom: .1rem;
     background-color:rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    padding: .5rem;
     
     
 }
@@ -48,7 +50,7 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
+    
   }
 
 
@@ -60,7 +62,9 @@ body {
 .answer {
     margin-bottom: .1rem;
     background-color:rgba(0, 0, 0, 0.5);
-    width: 100%;
+    overflow: auto;
+    font-size: 2rem;
+    
     
 }
 
@@ -68,6 +72,7 @@ body {
     cursor: pointer;
     text-align: justify;
     padding: .4rem;
+    overflow: auto;
 }
 
 
@@ -81,14 +86,60 @@ body {
 
 .next-question {
     margin: 0 auto;
+    margin-top: 1rem;
     background-color:rgba(0, 0, 0, 0.5);
     border: none;
     padding: .2rem;
     color: aquamarine;
     cursor: pointer;
     border-radius: 8px;
+    font-size: 2rem;
 }
 
 .quiz {
     text-align: center;
 }
+
+
+#questionPlace {
+    font-size: 2rem;
+}
+@media only screen and (max-width: 1300px) {
+    .container {
+      width: 80%;
+    }
+
+    .answer {
+        font-size: 2rem;
+    }
+
+    .next-question{
+        font-size: 3rem;
+        padding: 1rem;
+    }
+
+    #questionPlace {
+        font-size: 2rem;
+    }
+  }
+
+
+  @media only screen and (max-width: 440px) {
+    .container {
+      width: 90%;
+    }
+
+    .answer {
+        font-size: 1.5rem;
+        overflow: auto;
+    }
+
+    .next-question{
+        font-size: 2rem;
+        padding: .4rem;
+    }
+
+    #questionPlace {
+        font-size: 2rem;
+    }
+  }
