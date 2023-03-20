@@ -89,11 +89,12 @@ body {
     margin-top: 1rem;
     background-color:rgba(0, 0, 0, 0.5);
     border: none;
-    padding: .2rem;
+    padding: .5rem;
     color: aquamarine;
     cursor: pointer;
     border-radius: 8px;
     font-size: 2rem;
+
 }
 
 .quiz {
