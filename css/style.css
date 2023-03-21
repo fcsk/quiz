@@ -101,8 +101,12 @@ body {
     text-align: center;
 }
 
-.score-Div {
-    font-size: 1rem;
+.result-div {
+    margin-top: 3rem;
+}
+
+.score {
+    font-size: 2rem;
 }
 
 

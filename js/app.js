@@ -7,18 +7,18 @@ const answerD = document.getElementById("D");
 const answer = document.querySelectorAll(".answer");
 const answers = document.querySelectorAll(".answers div");
 const buttonNext = document.querySelector(".next-question");
-const score = document.querySelector(".score");
-const questionNumber = document.querySelector(".question-number");
 let scoreCounter = 0;
+let quizEndCounter = 0;
 
 async function loadJSON(url) {
   const res = await fetch(url);
   return await res.json();
 }
 
-loadJSON("https://api.npoint.io/ed80ed7e8d638faa9bb6").then((dataJSON) => {
+loadJSON("https://api.npoint.io/02c931769b9b5499a9c3").then((dataJSON) => {
   const max = dataJSON.length;
-  questionNumber.textContent = max;
+  quizEndCounter = max;
+
   let numberOfElement = numberofQuestion(max);
 
   questionPlace.textContent = dataJSON[numberOfElement].question;
@@ -36,15 +36,24 @@ loadJSON("https://api.npoint.io/ed80ed7e8d638faa9bb6").then((dataJSON) => {
   }
 
   function getAnswers(numberOfElement, data) {
-    answerA.textContent = dataJSON[numberOfElement].A;
-    answerB.textContent = dataJSON[numberOfElement].B;
-    answerC.textContent = dataJSON[numberOfElement].C;
-    answerD.textContent = dataJSON[numberOfElement].D;
+    if (scoreCounter == 10 || quizEndCounter == 0) {
+      answerA.style.display = "none";
+      answerB.style.display = "none";
+      answerC.style.display = "none";
+      answerD.style.display = "none";
+      questionPlace.textContent = `Your result is ${scoreCounter} / ${max}. Reload the page`;
+    } else {
+      questionPlace.textContent = dataJSON[numberOfElement].question;
+      answerA.textContent = dataJSON[numberOfElement].A;
+      answerB.textContent = dataJSON[numberOfElement].B;
+      answerC.textContent = dataJSON[numberOfElement].C;
+      answerD.textContent = dataJSON[numberOfElement].D;
 
-    answerA.value = "A";
-    answerB.value = "B";
-    answerC.value = "C";
-    answerD.value = "D";
+      answerA.value = "A";
+      answerB.value = "B";
+      answerC.value = "C";
+      answerD.value = "D";
+    }
   }
 
   answers.forEach((element) => {
@@ -53,19 +62,19 @@ loadJSON("https://api.npoint.io/ed80ed7e8d638faa9bb6").then((dataJSON) => {
         event.target.classList.add("postivie");
         if (!element.classList.contains("negative")) {
           scoreCounter++;
-          score.textContent = scoreCounter;
+          quizEndCounter--;
+
           setTimeout(function () {
             numberOfElement = numberofQuestion(max);
-            questionPlace.textContent = dataJSON[numberOfElement].question;
             getAnswers(numberOfElement, dataJSON);
             event.target.classList.remove("postivie");
           }, 800);
         }
       } else {
         element.classList.add("negative");
+        quizEndCounter--;
         setTimeout(function () {
           numberOfElement = numberofQuestion(max);
-          questionPlace.textContent = dataJSON[numberOfElement].question;
           getAnswers(numberOfElement, dataJSON);
           answer.forEach((element) => {
             element.classList.remove("negative");
@@ -80,9 +89,13 @@ loadJSON("https://api.npoint.io/ed80ed7e8d638faa9bb6").then((dataJSON) => {
       answer.classList.remove("postivie");
       answer.classList.remove("negative");
     });
-
+    quizEndCounter--;
     numberOfElement = numberofQuestion(max);
     questionPlace.textContent = dataJSON[numberOfElement].question;
     getAnswers(numberOfElement, dataJSON);
+    if (scoreCounter === 10 || quizEndCounter === 0) {
+      scoreCounter = 0;
+      quizEndCounter = max;
+    }
   });
 });

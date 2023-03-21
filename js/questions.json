@@ -82,7 +82,63 @@
         "C": "const variable",
         "D": "var variable;",
         "correct": "C"
+      },
+      {
+        "question":"how to remove eventlistener",
+        "A": "addEventListener(`click``, (event) => {event.remove();})",
+        "B": "addEventListener(`click`, nameofFunction)",
+        "C": "removeEventListener(`click`, nameofFunction)",
+        "D": "removeListener(`click`, nameofFunction)",
+        "correct": "C"
+      },
+      {
+        "question":"How to define flex in css",
+        "A": "display:flex",
+        "B": "display:flex-grid",
+        "C": "display:grid",
+        "D": "dissplay:block",
+        "correct": "A"
+      },
+      {
+        "question":"Does the condition have to be met in the if loop for the code to execute?",
+        "A": "yes",
+        "B": "no",
+        "C": "The condition does not have to be fulfilled",
+        "D": "I don't know",
+        "correct": "A"
+      },
+      {
+        "question":"You want to set the margin in pixels what command will you use in css",
+        "A": "margin: 20rem",
+        "B": "margin: 20px",
+        "C": "padding: 20px",
+        "D": "gap: 20px",
+        "correct": "B"
+      },
+      {
+        "question":"what method will you use to put something on the stack",
+        "A": "add()",
+        "B": "pop()",
+        "C": "push()",
+        "D": "delete()",
+        "correct": "C"
+      },
+      {
+        "question":"How to write the arrow function correctly",
+        "A": "add()",
+        "B": "hello = function() { return `Hello World!`; }",
+        "C": "let myFunction = (a, b) => a * b;",
+        "D": "function arrow() {return `hello world`}",
+        "correct": "C"
+      },
+      {
+        "question":"How to write random function in JS",
+        "A": "radomize()",
+        "B": "Marh.floor(Random());",
+        "C": "Random(0,100)",
+        "D": "Math.random() * 10",
+        "correct": "D"
       }
-  
+
       
   ]
