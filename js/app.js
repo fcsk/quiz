@@ -8,7 +8,7 @@ const answer = document.querySelectorAll(".answer");
 const answers = document.querySelectorAll(".answers div");
 const buttonNext = document.querySelector(".next-question");
 let scoreCounter = 0;
-let quizEndCounter = 0;
+let quizEndCounter = 10;
 
 async function loadJSON(url) {
   const res = await fetch(url);
@@ -17,7 +17,6 @@ async function loadJSON(url) {
 
 loadJSON("https://api.npoint.io/02c931769b9b5499a9c3").then((dataJSON) => {
   const max = dataJSON.length;
-  quizEndCounter = max;
 
   let numberOfElement = numberofQuestion(max);
 
@@ -41,7 +40,7 @@ loadJSON("https://api.npoint.io/02c931769b9b5499a9c3").then((dataJSON) => {
       answerB.style.display = "none";
       answerC.style.display = "none";
       answerD.style.display = "none";
-      questionPlace.textContent = `Your result is ${scoreCounter} / ${max}. Reload the page`;
+      questionPlace.textContent = `Your result is ${scoreCounter} / ${10}. Reload the page`;
     } else {
       questionPlace.textContent = dataJSON[numberOfElement].question;
       answerA.textContent = dataJSON[numberOfElement].A;
@@ -95,7 +94,7 @@ loadJSON("https://api.npoint.io/02c931769b9b5499a9c3").then((dataJSON) => {
     getAnswers(numberOfElement, dataJSON);
     if (scoreCounter === 10 || quizEndCounter === 0) {
       scoreCounter = 0;
-      quizEndCounter = max;
+      quizEndCounter = 10;
     }
   });
 });
