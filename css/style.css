@@ -35,10 +35,9 @@ body {
 .question {
     margin: 0 auto;
     width: 100%;
-    min-height: 10%;
+    min-height: 20%;
     margin-bottom: .1rem;
     background-color:rgba(0, 0, 0, 0.5);
-    overflow: auto;
     padding: .5rem;
     
     
@@ -62,7 +61,6 @@ body {
 .answer {
     margin-bottom: .1rem;
     background-color:rgba(0, 0, 0, 0.5);
-    overflow: auto;
     font-size: 2rem;
     
     
@@ -117,6 +115,10 @@ body {
     .container {
       width: 80%;
     }
+    
+    .question {
+        min-height: 45px;
+    }
 
     .answer {
         font-size: 2rem;
@@ -132,15 +134,13 @@ body {
     }
   }
 
-
-  @media only screen and (max-width: 440px) {
+  @media only screen and (max-width: 580px) {
     .container {
-      width: 90%;
+      width: 92%;
     }
 
     .answer {
-        font-size: 1.5rem;
-        overflow: auto;
+        font-size: 1.3rem;
     }
 
     .next-question{
@@ -151,4 +151,25 @@ body {
     #questionPlace {
         font-size: 2rem;
     }
+  }
+
+
+
+  @media only screen and (max-width: 440px) {
+    .container {
+      width: 90%;
+    }
+
+    .answer {
+        font-size: 1.5rem;
+    }
+
+  }
+
+  @media only screen and (max-width: 400px) {
+    .container {
+        width: 100%;
+        font-size: 1rem;
+    }
+    
   }
