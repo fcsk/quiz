@@ -10,11 +10,6 @@ const buttonNext = document.querySelector(".next-question");
 let scoreCounter = 0;
 let quizEndCounter = 10;
 
-async function loadJSON(url) {
-  const res = await fetch(url);
-  return await res.json();
-}
-
 fetch("https://question-qpi.onrender.com/questions")
   .then((response) => response.json())
   .then((data) => data.map((question) => question))
