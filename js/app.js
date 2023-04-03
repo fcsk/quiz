@@ -90,6 +90,7 @@ fetch("https://question-qpi.onrender.com/questions")
       answerC.style.display = "block";
       answerD.style.display = "block";
       getAnswers(numberOfElement, questions);
+      resetButton.style.display = "none";
     });
 
     buttonNext?.addEventListener("click", function () {
