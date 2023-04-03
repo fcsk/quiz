@@ -7,6 +7,7 @@ const answerD = document.getElementById("D");
 const answer = document.querySelectorAll(".answer");
 const answers = document.querySelectorAll(".answers div");
 const buttonNext = document.querySelector(".next-question");
+const resetButton = document.getElementById("reset-question");
 let scoreCounter = 0;
 let quizEndCounter = 10;
 
@@ -37,6 +38,7 @@ fetch("https://question-qpi.onrender.com/questions")
         answerC.style.display = "none";
         answerD.style.display = "none";
         questionPlace.textContent = `Your result is ${scoreCounter} / ${10}. Reload the page`;
+        resetButton.style.display = "block";
       } else {
         questionPlace.textContent = data[numberOfElement].question;
         answerA.textContent = data[numberOfElement].A;
@@ -77,6 +79,17 @@ fetch("https://question-qpi.onrender.com/questions")
           }, 700);
         }
       });
+    });
+
+    resetButton?.addEventListener("click", function () {
+      questionPlace.textContent = questions[numberOfElement].question;
+      scoreCounter = 0;
+      quizEndCounter = 10;
+      answerA.style.display = "block";
+      answerB.style.display = "block";
+      answerC.style.display = "block";
+      answerD.style.display = "block";
+      getAnswers(numberOfElement, questions);
     });
 
     buttonNext?.addEventListener("click", function () {
